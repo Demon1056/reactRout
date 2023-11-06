@@ -1,16 +1,14 @@
+import { Layout } from "./Layout/Layout";
+import { Home } from "pages/Home/Home";
+import { Movies } from "pages/Movies/Movies";
+import { MoviesDetails } from "pages/MovieDetails/MovieDetails";
 export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+  return (<>
+<Layout>
+<Home/>
+<Movies/>
+<MoviesDetails/>
+</Layout>
+</>
   );
 };
