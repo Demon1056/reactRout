@@ -3,6 +3,13 @@ import {  NavLink } from 'react-router-dom';
 
 export const ContainerLayout = styled.div`
 background-color: red;
+padding: 15px;
+`
+export const ContainerButtons = styled.div`
+background-color: red;
+padding: 10px 0;
+border: 1px solid grey;
+margin-bottom: 20px;
 `
 export const CustomNavLink = styled(NavLink)`
 display:  inline-block;

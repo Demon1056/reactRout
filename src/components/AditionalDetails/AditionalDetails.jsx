@@ -1,21 +1,25 @@
+import { ContainerAditionalDetails, MoviesTitle, DetailsItem, ItemTitle } from "./AditionalDetails.styled";
 export const AditionalDetails = ({
   movie: { title, vote_average, overview, genres, name, poster_path },
 }) => {
 
     const genresString = genres.map(genr => genr.name).join(', ')
+    const percentRating = (vote_average*10).toFixed(2)
   return (
-    <div>
+    <ContainerAditionalDetails>
       <img
         alt={title || name}
         src={`https://image.tmdb.org/t/p/w300${poster_path}`}
         width="300"
-      ></img>
-      <h1>{title}</h1>
+      />
+      <div>
+      <MoviesTitle>{title}</MoviesTitle>
       <ul>
-      <li>User Score:{vote_average}</li>
-      <li>Overwiew : {overview}</li>
-      <li>Geners {genresString}</li>
+      <DetailsItem><ItemTitle>User Score:</ItemTitle> {`${percentRating}%`} </DetailsItem>
+      <DetailsItem><ItemTitle>Overwiew :</ItemTitle>  {overview} </DetailsItem>
+      <DetailsItem><ItemTitle>Geners:</ItemTitle> {genresString} </DetailsItem>
       </ul>
-    </div>
+      </div>
+    </ContainerAditionalDetails>
   );
 };

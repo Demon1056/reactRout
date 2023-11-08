@@ -1,13 +1,19 @@
-import { Outlet} from 'react-router-dom';
-import { ContainerLayout, CustomNavLink } from './Layout.styled';
+import { Outlet } from 'react-router-dom';
+import {
+  ContainerLayout,
+  ContainerButtons,
+  CustomNavLink,
+} from './Layout.styled';
 export const Layout = () => {
   return (
     <>
-      <ContainerLayout>This red LAYOUT
-        <CustomNavLink to="/">HOME</CustomNavLink>
-        <CustomNavLink to="/movies">MOVIES</CustomNavLink>
+      <ContainerLayout>
+        <ContainerButtons>
+          <CustomNavLink to="/">HOME</CustomNavLink>
+          <CustomNavLink to="/movies">MOVIES</CustomNavLink>
+        </ContainerButtons>
+        <Outlet />
       </ContainerLayout>
-      <Outlet />
     </>
   );
 };
