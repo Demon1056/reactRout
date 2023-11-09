@@ -1,9 +1,14 @@
 import { Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
+
+import { Loader } from 'components/Loader/Loader';
+
 import {
   ContainerLayout,
   ContainerButtons,
   CustomNavLink,
 } from './Layout.styled';
+
 export const Layout = () => {
   return (
     <>
@@ -12,7 +17,10 @@ export const Layout = () => {
           <CustomNavLink to="/">HOME</CustomNavLink>
           <CustomNavLink to="/movies">MOVIES</CustomNavLink>
         </ContainerButtons>
-        <Outlet />
+        <Suspense fallback={Loader}>
+          {' '}
+          <Outlet />
+        </Suspense>
       </ContainerLayout>
     </>
   );

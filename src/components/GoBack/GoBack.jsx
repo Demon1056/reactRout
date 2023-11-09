@@ -1,9 +1,9 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
-export const GoBack = () => {
-    const navigate = useNavigate()
+export const GoBack = ({ path }) => {
+  const navigate = useNavigate();
   return (
-    <button type="button" onClick={() => navigate('/movies')}>
+    <button type="button" onClick={() => navigate(path || '/')}>
       Go back
     </button>
   );

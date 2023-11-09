@@ -1,4 +1,12 @@
-import { Link } from "react-router-dom"
-export const MovieItem =({movie})=>{
-    return <li><Link to={`/movies/${movie.id}`}>{movie.title||movie.name}</Link></li>
-}
+import { Link, useLocation } from 'react-router-dom';
+
+export const MovieItem = ({ movie }) => {
+  const location = useLocation();
+  return (
+    <li>
+      <Link to={`/movies/${movie.id}`} state={{ from: location }}>
+        {movie.title || movie.name}
+      </Link>
+    </li>
+  );
+};
